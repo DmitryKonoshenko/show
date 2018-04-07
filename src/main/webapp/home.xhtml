@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- Ionic -->
+    <link href="assets/css/open-iconic-bootstrap.css" rel="stylesheet"/>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-grid.css" rel="stylesheet"/>
+    <link href="assets/css/shop-homepage.css" rel="stylesheet"/>
+    <!-- Bootstrap DataTables -->
+    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/datatables.css" rel="stylesheet"/>
+    <!-- Custom styles for this template -->
+    <link href="assets/css/shop-homepage.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="assets/css/myapp.css" rel="stylesheet"/>
+    <!-- RedConnect -->
+    <script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
+            src="https://web.redhelper.ru/service/main.js?c=redemer"></script>
+    <div style="display: none"><a class="rc-copyright"
+                                  href="http://redconnect.ru">Сервис обратного звонка RedConnect</a></div>
+    <!--/RedConnect -->
+    <title>Витрина</title>
+</h:head>
+<h:body style="margin-left:50px">
+    <div class="wrapper">
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="http://192.168.99.100:8081/InternetShop_war/home"
+                           target="_blank">Магазин Электроники Электроник</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <h:form id="messagePanel" layout="block">
+                <h:panelGroup id="commentlist">
+                    <div class="row">
+                        <p:repeat id="cc" value="#{counterView.listProduct}" var="product">
+                            <div class="col-lg-3 col-md-6 mb-1">
+                                <div class="card2">
+                                    <a href="http://192.168.99.100:8081/InternetShop_war/show/#{product.id}/product"
+                                       target="_blank">
+                                        <img class="card-img-top2"
+                                             src="http://192.168.99.100:8081/InternetShop_war/resources/images/#{product.code}.jpg"
+                                             alt=""/>
+                                    </a>
+                                    <div class="card-body">
+                                        <h6 class="card-title">
+                                            <h:outputText value="#{product.name}"/>
+                                        </h6>
+                                        <h6><h:outputText value="&#8381; #{product.unitPrice}"/></h6>
+                                        <p class="card-text"><h:outputText value="#{product.description}"/></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </p:repeat>
+                    </div>
+                </h:panelGroup>
+                <p:poll update="commentlist" interval="10" />
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>
