@@ -51,7 +51,7 @@ public class JsonReader {
      * @throws JSONException
      */
     public List<Product> getTop() throws IOException, JSONException {
-        JSONArray json = readJsonFromUrl("http://192.168.99.100:8081/InternetShop_war/json/data/top");
+        JSONArray json = readJsonFromUrl("http://192.168.99.100:8081/json/data/top");
         Gson gson = new Gson();
         List<Product> list = new ArrayList<>();
         for (int i = 0; i <json.length()-2 ; i++) {

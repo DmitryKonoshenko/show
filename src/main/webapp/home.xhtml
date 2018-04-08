@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="http://192.168.99.100:8081/InternetShop_war/home"
+                        <a class="navbar-brand" href="http://192.168.99.100:8081/home"
                            target="_blank">Магазин Электроники Электроник</a>
                     </div>
                 </div>
@@ -46,10 +46,10 @@
                         <p:repeat id="cc" value="#{counterView.listProduct}" var="product">
                             <div class="col-lg-3 col-md-6 mb-1">
                                 <div class="card2">
-                                    <a href="http://192.168.99.100:8081/InternetShop_war/show/#{product.id}/product"
+                                    <a href="http://192.168.99.100:8081/show/#{product.id}/product"
                                        target="_blank">
                                         <img class="card-img-top2"
-                                             src="http://192.168.99.100:8081/InternetShop_war/resources/images/#{product.code}.jpg"
+                                             src="http://192.168.99.100:8081/resources/images/#{product.code}.jpg"
                                              alt=""/>
                                     </a>
                                     <div class="card-body">
